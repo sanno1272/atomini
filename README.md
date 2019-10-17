@@ -65,7 +65,7 @@ This is the structure construction of the app
 @logo{
 
 <temp>
-	<b>logo</b>
+	<div>logo</div>
 	
 	<div @bind="$tutu$"></div>
 	
