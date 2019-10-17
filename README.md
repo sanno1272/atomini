@@ -66,10 +66,15 @@ This is the structure construction of the app
 
 <temp>
 	<b>logo</b>
+	
 	<div @bind="$tutu$"></div>
+	
 	<loop ele="ul" for="dataa">
+	
 		<li>$key.nom$</li>
+		
 	</loop>
+	
 </temp>
 
 }
@@ -77,9 +82,13 @@ This is the structure construction of the app
 @menu{
 
 <temp>
+	
 	<loop ele="ul" for="dataa">
+		
 		<li>$key.nom$</li>
+		
 	</loop>
+	
 </temp>
 
 }
