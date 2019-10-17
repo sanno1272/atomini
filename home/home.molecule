@@ -1,0 +1,27 @@
+const home = `
+
+{ 'home'
+	molecules{
+		'nav',
+		'baseline',
+	}
+	
+	@@nav{
+		'head',
+		'logo',
+		'menu',
+		'ban'
+	}
+	
+	@@baseline{
+		'basetitre',
+		'basetexte',
+		'sliderHome',
+		'tabsHome',
+		'blocHome',
+		'liste'
+	}
+}
+
+
+`;

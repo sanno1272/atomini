@@ -1,0 +1,15 @@
+const contact = `
+
+{ 'contact'
+	molecules{
+		'plan'
+	}
+	
+	@@plan{
+		'adresse',
+		'map'
+	}
+	
+}
+
+`;

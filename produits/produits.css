@@ -1,0 +1,6 @@
+const css_produits = `
+
+@slider {
+	$contenu()$;
+}
+`;

@@ -1,0 +1,17 @@
+const produits = `
+
+{ 'produits'
+	molecules{
+		'pro',
+		'sliderHome'
+	}
+	
+	@@pro{
+		'logo',
+		'slider',
+		'texte'
+	}
+	
+}
+
+`;

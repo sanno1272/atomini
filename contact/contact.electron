@@ -1,0 +1,7 @@
+const _contact_ = `
+
+function popy () {
+	alert('POPYYYYYYYYY');
+}
+
+`;

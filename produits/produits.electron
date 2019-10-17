@@ -1,0 +1,8 @@
+const _produits_ = `
+
+function popy () {
+	alert('POPYYYYYYYYY');
+}
+var ahah = 'LE BIND DU PRODUIT !!!';
+
+`;

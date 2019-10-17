@@ -1,0 +1,19 @@
+const _contact = `
+
+@adresse{ 
+	<div>ADRESSE blah, blah</div>
+}
+
+@map{
+<temp>
+	<loop ele="ul" for="dataa2">
+		<li>$key.v$</li>
+	</loop>
+	<div>
+		c'est super !!
+	</div>
+</temp>
+}
+
+
+`;

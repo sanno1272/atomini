@@ -1,0 +1,77 @@
+const css_home = `
+@globalCol '#555';
+@globalCol2 'blue';
+@gray '#aaa';
+@red '#ff0000';
+
+bundle{ 'contenu'
+	gradient linear horizontal #eee #bbb;
+	color #333;
+	padd 50px;
+}
+
+// ----------- //
+
+
+
+@nav {
+	$contenu()$;
+}
+
+@baseline {
+	gradient linear horizontal #bbb #eee;
+}
+
+@logo{
+	color #000;
+}
+
+@logo:hover {
+	color $gray$;
+}
+
+@tabsUltabsData li {
+ padd 10px;
+ border: 1px solid #000;
+ border-bottom: 0px solid #000;
+ border-radius: 5px 5px 0px 0px;
+ cursor: pointer;
+}
+
+@tabContenttabsData {
+	width: 98%;
+	height: 100px;
+	border: 1px solid #000;
+	padd 10px;
+}
+
+@wrap-sliderHome {
+	trans all 1s ease;
+}
+
+// class
+@@end {
+	color $red$;
+}
+
+@routes{
+	width: 100%;
+	background-color: #444;
+}
+
+@loop-routes{
+		width: 300px;
+		margin: 0 auto;
+		padding-top: 5px;
+		padding-bottom: 5px;
+}
+
+@loop-routes li {
+		display: inline-block;
+		padd 10px 20px;
+		margin-left: 2px;
+		background-color: #ccc;
+		cursor: pointer;
+		
+}
+`;

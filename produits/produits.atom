@@ -1,0 +1,17 @@
+const _produits = `
+
+@slider{
+	<div @click="popy()"> CA SLIDEEEE</div>
+	<div @bind="$ahah$"></div>
+}
+
+@texte{
+<temp>
+	<loop ele="ul" for="dataa2">
+		<li>$key.v$</li>
+	</loop>
+</temp>
+}
+
+
+`;

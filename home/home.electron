@@ -1,0 +1,74 @@
+const _home_ = `
+var todos = [];
+var tabsData = [
+{label: 'ONE', title: 'LOREM', content: 'lorem ipsum'},
+{label: 'TWO', title: 'IPSUM', content: 'dolor set imet'},
+{label: 'THREE', title: 'DOLOR', content: 'va victis enurum'}
+];
+
+var sliderData = [
+{img: '<div style="padding:20px;">IMAGE 1</div>', content: 'YO MAN SLIDE 1'},
+{img: '<div style="padding:20px;">IMAGE 2</div>', content: 'YO MAN SLIDE 2'},
+{img: '<div style="padding:20px;">IMAGE 3</div>', content: 'YO MAN SLIDE 3'}
+];
+
+var blocData = [
+{img: '<div style="padding:20px;">IMAGE 1</div>', txt: 'lorem ipsum dolor set amet consectur ist alea parabellum jacta humanum  lorem ipsum dolor set amet consectur humanum '},
+{img: '<div style="padding:20px;">IMAGE 2</div>', txt: 'lorem ipsum dolor set amet consectur ist alea parabellum jacta humanum '},
+{img: '<div style="padding:20px;">IMAGE 2</div>', txt: 'lorem ipsum dolor set amet consectur ist alea parabellum jacta humanum '},
+{img: '<div style="padding:20px;">IMAGE 2</div>', txt: 'lorem ipsum dolor set amet consectur ist alea parabellum jacta humanum '},
+{img: '<div style="padding:20px;">IMAGE 2</div>', txt: 'lorem ipsum dolor set amet consectur ist alea parabellum jacta humanum '},
+{img: '<div style="padding:20px;">IMAGE 2</div>', txt: 'lorem ipsum dolor set amet consectur ist alea parabellum jacta humanum '},
+{img: '<div style="padding:20px;">IMAGE 2</div>', txt: 'lorem ipsum dolor set amet consectur ist alea parabellum jacta humanum '},
+{img: '<div style="padding:20px;">IMAGE 3</div>', txt: 'lorem ipsum dolor set amet consectur ist alea parabellum jacta humanum lorem ipsum dolor set amet consectur ist alea parabellum jacta humanum '}
+];
+
+var dataa = [{nom:'marcel'},{nom:'raymond'}];
+var dataa2 = [{v:'germaine'},{v:'gertrude'}];
+
+
+var neron = 'NERON';
+var cesar = 'TU QUOQUE FILI';
+
+function pop () {
+	alert("POP");
+}
+
+function bye () {
+	alert('BYE BYE');
+}
+
+var tata = 'JE SUIS BIND !!!!!!'
+var tutu = 'JE SUIS BIND 22222222222 !!!!!!'
+var toto = 'JE SUIS TOTO';
+var huhu = 'HUHU';
+var dudu = 'DUDU';
+var blabla = 'blah blah blah blah blah blah blah blah blah blah'; 
+
+var arrBla = [
+'blah blah blah blah blah blah blah blah blah blah !!!!! blah blah blah blah'
+]
+
+
+	function showCode (el) {
+		var ele = document.getElementById(el);
+		alert(ele.innerHTML);
+	}
+	
+
+	
+function addy () {
+	dataa2.push({v: 'memere'});
+}
+
+
+var blocy = "BLOC BLOC BLOC";
+	
+	
+function hideSlider () {
+	var ele = document.getElementById("sliderHome");
+	ele.style.display = (ele.style.display==='none' || '') ?'':'none';
+}
+
+
+`;

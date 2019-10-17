@@ -1,0 +1,89 @@
+const _home = `
+
+
+@head{
+	<div>
+		Lorem Ipsum dolor set amet consectur coercis ut humanum <br>
+		est jacta Lorem Ipsum dolor @{cesar} set amet consectur <br>
+		coercis ut humanum est jacta  
+	</div>
+}
+
+@logo{
+<temp>
+	<b>logo</b>
+	<div @bind="$tutu$"></div>
+	<p @bind="$toto$"></p>
+	<loop ele="ul" for="dataa">
+		<li>$key.nom$</li>
+	</loop>
+</temp>
+}
+
+@menu{
+<temp>
+	<loop ele="ul" for="dataa">
+		<li>$key.nom$</li>
+	</loop>
+</temp>
+}
+
+@ban{
+<temp>
+	<div class="end">
+		THE END
+		<img src="images/chart.svg" border="0">
+	</div>
+</temp>
+}
+
+@basetitre{
+	<div @click="addy()">basetitre<br>BBBB</div>
+}
+
+@basetexte{
+	<div>basetexte</div>
+	<div @bind="$tata$"></div>
+	<div @click="hideSlider()">basetexte 2222222</div>
+}
+
+@sliderHome{
+<temp>
+	<slider for="sliderData">
+		<div>$key.img$</div>
+		<div>$key.content$</div>
+	</slider>
+</temp>
+}
+
+@tabsHome{
+<temp>
+	<div @bind="$dudu$"></div>
+	<tabs for="tabsData">
+		<h3>$key.title$</h3>
+		<div>
+			$key.content$
+		</div>
+	</tabs>
+	<div @bind="$huhu$" @click="showCode('tabsHome')"></div>
+</temp>
+}
+
+@blocHome{
+<temp>
+	<blocs theme="normal" line="3" for="blocData">
+		<div>$key.img$</div>
+		<div>$key.txt$</div>
+	</blocs>
+</temp>
+}
+
+@liste{
+<temp>
+	<div><h3>LA TODOLIST</h3></div>
+	<todolist value="add"></todolist>
+</temp>
+}
+
+`;
+
