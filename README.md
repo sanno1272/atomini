@@ -33,17 +33,13 @@ the code structure for the files is :
 	molecules{
 	
 		'nav',
-		
 	}
 	
 	@@nav{
 	
 		'head',
-		
 		'logo',
-		
 		'menu',
-		
 		'ban'
 		
 	}
