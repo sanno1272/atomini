@@ -26,7 +26,7 @@ for comprehension :
 each apps are divided in a repo with four files (molecule, atom, electron, acss)
 the code structure for the files is :
 - The index is generated with nodejs which contains the HTML body, the framework, and the organism
-- MOLECULE file structure itself and the atoms :
+- <b>MOLECULE</b> file structure itself and the atoms :
 
 { 'home'
 
@@ -51,7 +51,9 @@ and the nav molecule => '@@nav' wrapping the atoms, => head, logo, etc ...
 This is the structure construction of the app
 
 
-- ATOM file contain the HTML vue :
+
+
+- <b>ATOM</b> file contain the HTML vue :
 
 @head{
 
@@ -93,3 +95,18 @@ This is the structure construction of the app
 </temp>
 
 }
+
+
+
+- <b>ELECTRON</b> file contains the javascript script :
+
+var foo = "hello";
+
+function hello () { 
+
+	console.log(foo);
+
+}
+
+etc...
+
