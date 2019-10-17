@@ -29,14 +29,25 @@ the code structure for the files is :
 - MOLECULE file structure itself and the atoms :
 
 { 'home'
+
 	molecules{
+	
 		'nav',
+		
 	}
+	
 	@@nav{
+	
 		'head',
+		
 		'logo',
+		
 		'menu',
+		
 		'ban'
+		
 	}
+	
 }
+
 
