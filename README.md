@@ -5,6 +5,9 @@
 
 
 ----------
+VERSION : 0.1.0
+----------
+
 principles of the framework is based on atomic design concept.
 the architecture is a SPA (single page application) principle.
 
@@ -22,6 +25,8 @@ for comprehension :
 - atoms => html vue
 - electrons => javascript functions
 - acss => css pre-processor like 
+
+----------
 
 each apps are divided in a repo with four files (molecule, atom, electron, acss)
 the code structure for the files is :
@@ -50,8 +55,7 @@ with molecules defined, in the example => nav
 and the nav molecule => '@@nav' wrapping the atoms, => head, logo, etc ... 
 This is the structure construction of the app
 
-
-
+----------
 
 - <b>ATOM</b> file contain the HTML vue :
 
@@ -96,7 +100,7 @@ This is the structure construction of the app
 
 }
 
-
+----------
 
 - <b>ELECTRON</b> file contains the javascript script :
 
@@ -110,8 +114,7 @@ function hello () {
 
 etc...
 
-
-
+----------
 
 - <b>ACSS</b> file contains the css :
 
