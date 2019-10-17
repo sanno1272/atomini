@@ -1,7 +1,7 @@
 # atom
 
-Launch => node serveur_img.js
-browser => localhost:8080
+- Launch => node serveur_img.js
+- browser => localhost:8080
 
 
 ----------
@@ -17,12 +17,26 @@ the architecture is a SPA (single page application) principle.
 repo structure is angular like.
 
 for comprehension :
-organism => container in which is injected the apps
-molecules => structure of the apps contains atoms
-atoms => html vue
-elctrons => javascript functions
-acss => css pre-processor like 
+- organism => container in which is injected the apps
+- molecules => structure of the apps contains atoms
+- atoms => html vue
+- electrons => javascript functions
+- acss => css pre-processor like 
 
 each apps are divided in a repo with four files (molecule, atom, electron, acss)
 the code structure for the files is :
+- The index is generated with nodejs which contains the HTML body, the framework, and the organism
+- MOLECULE file structure itself and the atoms :
+
+{ 'home'
+	molecules{
+		'nav',
+	}
+	@@nav{
+		'head',
+		'logo',
+		'menu',
+		'ban'
+	}
+}
 
