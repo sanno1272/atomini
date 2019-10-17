@@ -153,6 +153,7 @@ bundle{ 'contenu'
 
 
 // class
+
 @@end {
 
 	color $red$;
