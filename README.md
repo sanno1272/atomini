@@ -39,11 +39,47 @@ the code structure for the files is :
 	
 		'head',
 		'logo',
-		'menu',
-		'ban'
+		'menu'
 		
 	}
 	
 }
 
+so there is the home organism :
+with molecules defined, in the example => nav
+and the nav molecule => '@@nav' wrapping the atoms, => head, logo, etc ... 
+This is the structure construction of the app
 
+
+- ATOM file contain the HTML vue :
+
+@head{
+
+	<div>
+		Lorem Ipsum dolor set amet consectur coercis ut humanum <br>
+		est jacta Lorem Ipsum dolor @{cesar} set amet consectur <br>
+		coercis ut humanum est jacta  
+	</div>
+}
+
+@logo{
+
+<temp>
+	<b>logo</b>
+	<div @bind="$tutu$"></div>
+	<loop ele="ul" for="dataa">
+		<li>$key.nom$</li>
+	</loop>
+</temp>
+
+}
+
+@menu{
+
+<temp>
+	<loop ele="ul" for="dataa">
+		<li>$key.nom$</li>
+	</loop>
+</temp>
+
+}
