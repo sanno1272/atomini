@@ -110,3 +110,54 @@ function hello () {
 
 etc...
 
+
+
+
+- <b>ACSS</b> file contains the css :
+
+@globalCol '#555';
+
+@red '#ff0000';
+
+
+bundle{ 'contenu'
+
+	gradient linear horizontal #eee #bbb;
+	
+	color #333;
+	
+	padd 50px;
+	
+}
+
+
+@nav {
+
+	$contenu()$;
+	
+}
+
+
+@logo{
+
+	color #000;
+	
+}
+
+
+@logo:hover {
+
+	color #aaa;
+	
+}
+
+
+// class
+@@end {
+
+	color $red$;
+	
+}
+
+
+
