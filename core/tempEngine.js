@@ -19,17 +19,6 @@ exports.TemplateEngine = function (html, options) {
 		html = html.replace(regX[i],expX[i]);
 	}
 	
-	
-	/*
-	// css
-	html = html.replace(/_p/g,'position');
-	html = html.replace(/_w/g,'width');
-	html = html.replace(/_h/g,'height');
-	html = html.replace(/_bgc/g,'background-color');
-	// ===
-	*/
-	
-	
 	while(match = re.exec(html)) {
 		add(html.slice(cursor, match.index))(match[1], true);
 		cursor = match.index + match[0].length;
