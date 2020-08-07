@@ -1,0 +1,179 @@
+<style>
+@myGreen = "#ff00cc"
+@myRed = "#ff0000"
+@myGray = "#eee"
+
+bundle{ 'border'
+	bord 1px solid #555;
+}
+
+bundle{ 'push'
+	font-size: 20px;
+	color: #888;
+}
+
+bundle{ 'corps'
+	bgcol $myGray$;
+	padd 10px;
+	pos relative;
+	wid auto;
+	hei auto;
+	$push()$
+}
+
+bundle{ 'borderRed'
+	bord 1px solid red;
+}
+
+bundle{ 'borderBlue'
+	bord 1px solid blue;
+}
+
+@header{
+	col pink;
+}
+
+@header2 #subHead {
+	col blue;
+	$borderRed()$
+}
+
+@header2 #subHead:hover {
+	col blue;
+	$borderBlue()$
+}
+
+@header2:hover {
+	col red;
+}
+
+@tata {
+col $myGreen$;
+$border()$
+}
+
+@bobo {
+col red;
+$borderRed()$
+}
+
+@pals{
+	$corps()$
+}
+
+@myComponent{
+	gradient linear vertical #eee #555;
+}
+
+
+@@dNone{
+display: none;
+}
+</style>
+
+<div id="header">
+HEADER 1
+</div>
+
+<div id="bobo">
+BOBO
+</div>
+
+<div id="header2">
+the header
+	<div id="subHead">
+	HEADER 2
+	</div>
+</div>
+
+<div><img src="src/images/img.png" border="0"></div>
+
+<div id="skills">
+My skills: <br>
+	<loop data="skills">
+		<span>
+			@skills[k].a@
+		</span><br>
+	</loop>
+</div>
+<div ::if (this.showSkills) { id="toto" }::
+	 ::if (!this.showSkills) { id="bobo" }::></div>
+
+
+<div id="pals">
+My pals: <br>
+	<loop data="pals">
+		<span ::onclick = myApp.show(this)::>@pals[k].n@ </span>
+		<div class="dNone">
+			<div>
+				@pals[k].age@
+			</div>
+		</div>
+		<br>
+	</loop>
+</div>
+
+
+<div ::if (this.showPals == 0) { id="tata" }:: 
+	 ::if (this.showPals == 1) { id="titi" }::>
+</div>
+
+@if (this.showPals == 1) {@
+	<div>
+	EH OUI JE SUI VIOLET
+	</div>
+@}@
+
+<component name="myComponent" />
+<component name="myComponent2" />
+
+<button onclick="myApp.sec(this)">show/hide</button>
+<section>OKI</section>
+
+
+
+<script>
+myApp = {
+		skills: [{a: "js"}, {a: "html"}, {a: "css"}],
+		pals: [{n: "Paul", age: 26}, {n: "Mike", age: 30}, {n: "Jason", age: 28}],
+		showSkills: true,
+		showPals: 0,
+		show: (t)=> {
+			toggleColor(t,'red');
+			toggleClass(t.nextSibling.nextSibling,'dNone');
+		},
+		myComponent: ()=> {
+			create('div','myComponent', {
+				html: `
+				le div composant ! YES
+				<button id="incr">clic ++</button>
+				<div id="myNb"></div>
+				<loop data="pals">
+					<div>
+						@pals[k].age@
+					</div>
+				</loop>
+				`,
+				className: 'laClass',
+				call: ()=> {
+					click(elId('incr'), ()=> {
+						myApp.nb++;
+						elId('myNb').innerHTML = myApp.nb;
+					});
+				}
+			});
+		},
+		myComponent2: ()=> {
+			create('div','myComponent2', {
+				html: 'le div composant ! NO',
+				call: ()=> {
+						elId('myComponent2').innerHTML += '[ NO ]';
+				}
+			});
+		},
+		nb: 0,
+		sec: (t)=> {
+			toggleClass(t.nextSibling.nextSibling,'dNone');
+		}
+	}
+</script>

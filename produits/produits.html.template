@@ -1,0 +1,85 @@
+<style>
+@myGreen = "#ff00cc"
+@myRed = "#ff0000"
+
+bundle{ 'border'
+	border: 1px solid #555;
+}
+
+@tata {
+color: $myGreen$;
+$border()$
+}
+
+@bobo {
+color: red;
+}
+
+@@dNone{
+display: none;
+}
+</style>
+
+<div><img src="src/images/img.png" border="0"></div>
+
+<div id="skills">
+My skills: <br>
+	<loop data="skills">
+		<span>@skills[k].a@</span><br>
+	</loop>
+</div>
+<div ::if (this.showSkills) { id="toto" }::></div>
+
+
+<div id="pals">
+My pals: <br>
+	<loop data="pals">
+		<span ::onclick = myApp.show(this)::>@pals[k].n@ </span>
+		<div class="dNone">
+			<div>
+				@pals[k].age@
+			</div>
+		</div>
+		<br>
+	</loop>
+</div>
+
+
+<div ::if (this.showPals == 0) { id="tata" }:: 
+	 ::if (this.showPals == 1) { id="titi" }::>
+</div>
+
+@if (this.showPals == 1) {@
+	<div>
+	EH OUI JE SUI VIOLET
+	</div>
+@}@
+
+<component name="myComponent" />
+
+
+
+
+
+
+
+<script>
+	myApp = {
+		skills: [{a: "js"}, {a: "html"}, {a: "css"}],
+		showSkills: true,
+		pals: [{n: "Paul", age: 26}, {n: "Mike", age: 30}, {n: "Jason", age: 28}],
+		showPals: 1,
+		ss: false,
+		show: (t)=> {
+			toggleColor(t,'red');
+			toggleClass(t.nextSibling.nextSibling,'dNone');
+		},
+		myComponent: ()=> {
+			create('div','myComponent', {
+				html: 'le div composant ! YES'
+			});
+				
+		}
+	}
+
+</script>

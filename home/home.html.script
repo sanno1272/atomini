@@ -1,0 +1,44 @@
+exports.
+myApp = {
+		skills: [{a: "js"}, {a: "html"}, {a: "css"}],
+		pals: [{n: "Paul", age: 26}, {n: "Mike", age: 30}, {n: "Jason", age: 28}],
+		showSkills: true,
+		showPals: 0,
+		show: (t)=> {
+			toggleColor(t,'red');
+			toggleClass(t.nextSibling.nextSibling,'dNone');
+		},
+		myComponent: ()=> {
+			create('div','myComponent', {
+				html: `
+				le div composant ! YES
+				<button id="incr">clic ++</button>
+				<div id="myNb"></div>
+				<loop data="pals">
+					<div>
+						@pals[k].age@
+					</div>
+				</loop>
+				`,
+				className: 'laClass',
+				call: ()=> {
+					click(elId('incr'), ()=> {
+						myApp.nb++;
+						elId('myNb').innerHTML = myApp.nb;
+					});
+				}
+			});
+		},
+		myComponent2: ()=> {
+			create('div','myComponent2', {
+				html: 'le div composant ! NO',
+				call: ()=> {
+						elId('myComponent2').innerHTML += '[ NO ]';
+				}
+			});
+		},
+		nb: 0,
+		sec: (t)=> {
+			toggleClass(t.nextSibling.nextSibling,'dNone');
+		}
+	}

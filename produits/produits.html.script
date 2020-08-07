@@ -1,0 +1,19 @@
+exports.
+	myApp = {
+		skills: [{a: "js"}, {a: "html"}, {a: "css"}],
+		showSkills: true,
+		pals: [{n: "Paul", age: 26}, {n: "Mike", age: 30}, {n: "Jason", age: 28}],
+		showPals: 1,
+		ss: false,
+		show: (t)=> {
+			toggleColor(t,'red');
+			toggleClass(t.nextSibling.nextSibling,'dNone');
+		},
+		myComponent: ()=> {
+			create('div','myComponent', {
+				html: 'le div composant ! YES'
+			});
+				
+		}
+	}
+

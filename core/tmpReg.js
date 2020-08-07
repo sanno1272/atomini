@@ -1,0 +1,75 @@
+exports.regE = [
+/<loop data="([\s\S]*?)">/g,
+/<\/loop>/g,
+/::if \(([\s\S]*?)\)(| )\{/g,
+/}::/g,
+/::onclick =([\s\S]*?)::/g,
+/@([a-z])[k].([a-z])@/g,
+/<component name="([\s\S]*?)" \/>/g
+];
+
+exports.expE = [
+'@for(var k in this.$1) {@',
+'@}@',
+'@if ($1)$2{@',
+'@}@',
+'onclick=$1',
+'@this.$1[k]["$2"]@',
+'<div id="$1"><script>setTimeout(function () {document.getElementById("lastScript").innerHTML +=  setTimeout(myApp.$1,60);},50)</script></div>'
+];
+
+exports.regCSS = [
+/@([\s\S]*?)=([\s\S]*?)/g,
+/@@([\s\S]*?)\{([\s\S]*?)\}/g,
+/@([a-zA-Z-0-9|\-\_]*)([\s\S]*?)\{([\s\S]*?)\}/g,
+/\$([\s\S]*?)\$/g,
+/bundle\{ '([\s\S]*?)'([\s\S]*?)\}/g,
+/bgcol ([\s\S]*?);/g,
+/col ([\s\S]*?);/g,
+/paddL ([\s\S]*?);/g,
+/paddR ([\s\S]*?);/g,
+/paddT ([\s\S]*?);/g,
+/paddB ([\s\S]*?);/g,
+/padd ([\s\S]*?);/g,
+/pos ([\s\S]*?);/g,
+/wid ([\s\S]*?);/g,
+/hei ([\s\S]*?);/g,
+/bord ([\s\S]*?);/g,
+/bordL ([\s\S]*?);/g,
+/bordR ([\s\S]*?);/g,
+/bordT ([\s\S]*?);/g,
+/bordB ([\s\S]*?);/g,
+/gradient linear vertical ([\s\S]*?) ([\s\S]*?);/gi,
+/gradient linear horizontal ([\s\S]*?) ([\s\S]*?);/gi,
+/gradient radial ([\s\S]*?) ([\s\S]*?);/gi,
+/gradient diagonal left ([\s\S]*?) ([\s\S]*?);/gi,
+/gradient diagonal right ([\s\S]*?) ([\s\S]*?);/gi
+];
+
+exports.expCSS = [
+'var $1=$2',
+'arrX.push(`.$1{$2}`);',
+'arrX.push(`#$1$2{$3}`);',
+'`+$1+`',
+'function $1 () { return `$2` }',
+'background-color: $1;',
+'color: $1;',
+'padding-left: $1;',
+'padding-right: $1;',
+'padding-top: $1;',
+'padding-bottom: $1;',
+'padding: $1;',
+'position: $1;',
+'width: $1;',
+'height: $1;',
+'border: $1;',
+'border-left: $1;',
+'border-right: $1;',
+'border-top: $1;',
+'border-bottom: $1;',
+'background: $1; /* Old browsers */background: -moz-linear-gradient(top, $1 0%, $2 100%); /* FF3.6+ */background: -webkit-linear-gradient(top, $1 0%,$2 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top, $1 0%,$2 100%); /* Opera 11.10+ */background: -ms-linear-gradient(top, $1 0%,$2 100%); /* IE10+ */background: linear-gradient(to bottom, $1 0%,$2 100%); /* W3C */',
+'background: rgb(205,235,142); /* Old browsers */background: -moz-linear-gradient(left, $1 0%, $2 100%); /* FF3.6+ */background: -webkit-linear-gradient(left, $1 0%,$2 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(left, $1 0%,$2 100%); /* Opera 11.10+ */background: -ms-linear-gradient(left, $1 0%,$2 100%); /* IE10+ */background: linear-gradient(to right, $1 0%,$2 100%); /* W3C */',
+'background: rgb(205,235,142); /* Old browsers */background: -moz-radial-gradient(center, ellipse cover, $1 0%, $2 100%); /* FF3.6+ */background: -webkit-radial-gradient(center, ellipse cover, $1 0%,$2 100%); /* Chrome10+,Safari5.1+ */background: -o-radial-gradient(center, ellipse cover, $1 0%,$2 100%); /* Opera 12+ */background: -ms-radial-gradient(center, ellipse cover, $1 0%,$2 100%); /* IE10+ */background: radial-gradient(ellipse at center, $1 0%,$2 100%); /* W3C */',
+'background: rgb(205,235,142); /* Old browsers */background: -moz-linear-gradient(-45deg, $1 0%, $2 100%); /* FF3.6+ */background: -webkit-linear-gradient(-45deg, $1 0%,$2 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(-45deg, $1 0%,$2 100%); /* Opera 11.10+ */background: -ms-linear-gradient(-45deg, $1 0%,$2 100%); /* IE10+ */background: linear-gradient(135deg, $1 0%,$2 100%); /* W3C */',
+'background: rgb(205,235,142); /* Old browsers */background: -moz-linear-gradient(45deg, $1 0%, $2 100%); /* FF3.6+ */background: -webkit-linear-gradient(45deg, $1 0%,$2 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(45deg, $1 0%,$2 100%); /* Opera 11.10+ */background: -ms-linear-gradient(45deg, $1 0%,$2 100%); /* IE10+ */background: linear-gradient(45deg, $1 0%,$2 100%); /* W3C */',
+];

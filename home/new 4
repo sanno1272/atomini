@@ -1,0 +1,54 @@
+<script>
+@colGlobal = "#ffffff";
+@coltext = "#ffffff";
+@fontGlobal = "arial";
+
+
+@text1 = `
+fins de collection, calendriers de l’avent, 
+		accessoires et les offres cadeaux magasins à 
+		l’exclusion des cubes pétillants et Les Plaisirs 
+		Nature 50 ml. Attention : les offres ne sont pas 
+		cumulables entre elles ni cumulables avec les offres 
+		de nos autres canaux de distribution 
+		(internet, offre courrier, téléphone, magasins)
+`;
+
+@dbCol = {
+	width: "300",
+	className: "resp",
+	css: {
+		_w: "300px",
+		_p: "10px",
+		_ta: "left"
+	}
+}
+
+@img11 = "http: cabestan.com/assets/src/images/image1.jpg";
+</script>
+
+
+<global w="640">
+	<tab w="600" td={w:"600", font:"@fontGlobal@", padding:"10px",color: "@coltext@"}>
+		@text1@
+	</tab>
+	<tab w="600">
+		<td ::dbCol.width:: 
+			::dbCol.css:: 
+			::dbCol.className::>@text2@</td>
+			
+		<td ::dbCol.width:: 
+			::dbCol.css:: 
+			::dbCol.className::>@text3@</td>
+	</tab>
+	<tab w="600">
+		<td ::dbCol.width:: 
+			::dbCol.css:: 
+			::dbCol.className::>@text4@</td>
+			
+		<td ::img1.width::>
+			<component="img1" />
+		</td>
+	</tab>
+</global>
+

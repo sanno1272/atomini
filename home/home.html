@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>framework</title>
+</head>
+<body>
+<style>#header{
+	color: pink;
+}#header2 #subHead {
+	color: blue;
+	
+	border: 1px solid red;
+
+}#header2 #subHead:hover {
+	color: blue;
+	
+	border: 1px solid blue;
+
+}#header2:hover {
+	color: red;
+}#tata {
+color: #ff00cc;
+
+	border: 1px solid #555;
+
+}#bobo {
+color: red;
+
+	border: 1px solid red;
+
+}#pals{
+	
+	background-color: #eee;
+	padding: 10px;
+	position: relative;
+	width: auto;
+	height: auto;
+	
+	font-size: 20px;
+	color: #888;
+
+
+}#myComponent{
+	background: #eee; /* Old browsers */background: -moz-linear-gradient(top, #eee 0%, #555 100%); /* FF3.6+ */background: -webkit-linear-gradient(top, #eee 0%,#555 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top, #eee 0%,#555 100%); /* Opera 11.10+ */background: -ms-linear-gradient(top, #eee 0%,#555 100%); /* IE10+ */background: linear-gradient(to bottom, #eee 0%,#555 100%); /* W3C */
+}.dNone{
+display: none;
+}</style>    <div id="header">  HEADER 1  </div>    <div id="bobo">  BOBO  </div>    <div id="header2">  the header   <div id="subHead">   HEADER 2   </div>  </div>    <div><img src="src/images/img.png" border="0"></div>    <div id="skills">  My skills: <br>       <span>     js    </span><br>       <span>     html    </span><br>       <span>     css    </span><br>     </div>  <div  id="toto"     ></div>      <div id="pals">  My pals: <br>       <span onclick= myApp.show(this)>Paul </span>    <div class="dNone">     <div>      26     </div>    </div>    <br>       <span onclick= myApp.show(this)>Mike </span>    <div class="dNone">     <div>      30     </div>    </div>    <br>       <span onclick= myApp.show(this)>Jason </span>    <div class="dNone">     <div>      28     </div>    </div>    <br>     </div>      <div  id="tata"      >  </div>        <div id="myComponent"><script>setTimeout(function () {document.getElementById("lastScript").innerHTML +=  setTimeout(myApp.myComponent,60);},50)</script></div>  <div id="myComponent2"><script>setTimeout(function () {document.getElementById("lastScript").innerHTML +=  setTimeout(myApp.myComponent2,60);},50)</script></div>    <button onclick="myApp.sec(this)">show/hide</button>  <section>OKI</section>        <script>  myApp = {    skills: [{a: "js"}, {a: "html"}, {a: "css"}],    pals: [{n: "Paul", age: 26}, {n: "Mike", age: 30}, {n: "Jason", age: 28}],    showSkills: true,    showPals: 0,    show: (t)=> {     toggleColor(t,'red');     toggleClass(t.nextSibling.nextSibling,'dNone');    },    myComponent: ()=> {     create('div','myComponent', {      html: `      le div composant ! YES      <button id="incr">clic ++</button>      <div id="myNb"></div>             <div>        26       </div>             <div>        30       </div>             <div>        28       </div>            `,      className: 'laClass',      call: ()=> {       click(elId('incr'), ()=> {        myApp.nb++;        elId('myNb').innerHTML = myApp.nb;       });      }     });    },    myComponent2: ()=> {     create('div','myComponent2', {      html: 'le div composant ! NO',      call: ()=> {        elId('myComponent2').innerHTML += '[ NO ]';      }     });    },    nb: 0,    sec: (t)=> {     toggleClass(t.nextSibling.nextSibling,'dNone');    }   }  </script><br>
+
+<script id="lastScript"></script>
+<script src="core/fun/fun.js"></script>
+</body>
+</html>
+ 
