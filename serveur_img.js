@@ -1,12 +1,13 @@
 const http = require('http');
-const fs = require("fs");
+const fs = require('fs');
 const vm = require('vm');
 const url = require('url');
 const path = require('path');
+const qs = require('querystring');
 
 // fonction chargement
 async function openFile (fileName) {
-	const file = await vm.runInThisContext(fs.readFileSync(__dirname + "/" + fileName));
+	const file = await vm.runInThisContext(fs.readFileSync(__dirname + '/' + fileName));
 	return file;
 }
 
@@ -16,16 +17,16 @@ async function openFile (fileName) {
 	const configFile = require('./config/files.js');
 	const file = configFile.files;
 	for (var key in file) {
-		 openFile(file[key]+"/"+file[key]+".atom");
-		 openFile(file[key]+"/"+file[key]+".molecule");
-		 openFile(file[key]+"/"+file[key]+".electron");
-		 openFile(file[key]+"/"+file[key]+".css");
+		 openFile(file[key]+'/'+file[key]+'.atom');
+		 openFile(file[key]+'/'+file[key]+'.molecule');
+		 openFile(file[key]+'/'+file[key]+'.electron');
+		 openFile(file[key]+'/'+file[key]+'.css');
 	}
 	
 	async function openConfig (fileName) {
 		// fabrication fichier config
 		fs.open(fileName, 'w+', function(err, data) {
-			if (err) console.log("ERROR !! " + err);
+			if (err) console.log('ERROR !! ' + err);
 			else {
 				let co = 'exports.mapper = {\n\tmolecules: [\n';
 				for (var key in file)  co += '\t\t'+file[key]+',\n'; 
@@ -38,8 +39,8 @@ async function openFile (fileName) {
 				co += '\t]\n}';
 				co = co.replace(/\[([\s\S]*?),\]/gi,'[$1]');
 
-				fs.write(data, ''+co+' ', -1, ''+co+' length', 1, function(err) {
-				if (err) console.log("ERROR !! " + err);
+				fs.write(data, ''+co+' ', ''+co+' length', function(err) {
+				if (err) console.log('ERROR !! ' + err);
 					fs.close(data, function() {
 						console.log('written success');
 					})
@@ -54,7 +55,7 @@ async function openFile (fileName) {
 	
 	 openConfig("config/config.js");
 	// appel du core framework
-	 openFile("framework.js");
+	 openFile('framework.js');
 	const configReg = require('./config/regex.js');
 	const regRoutesFrame = configReg.regRoutesFrame;
 	const replRoutesFrame = configReg.replRoutesFrame;
@@ -135,7 +136,7 @@ const mapp = configMap.mapper;
 					co += '</body></html>';
 					
 
-				fs.write(data, ''+co+' ', -1, ''+co+' length', 1, function(err) {
+				fs.write(data, ''+co+' ', ''+co+' length', function(err) {
 				if (err) console.log("ERROR !! " + err);
 					fs.close(data, function() {
 						console.log('written success');
@@ -156,7 +157,7 @@ http.createServer(function (req, res) {
   // Extrait le chemin de l'URL
   let pathname = `.${parsedUrl.pathname}`;
 
-  // Associe le type MIME par rapport au suffixe du fichier demandé
+  // Associe le type MIME par rapport au suffixe du fichier demandÃ©
   const mimeType = {
     '.ico': 'image/x-icon',
     '.html': 'text/html',
@@ -180,7 +181,7 @@ http.createServer(function (req, res) {
       res.end(`File ${pathname} not found!`);
       return;
     }
-    // s'il s'agit d'un répertoire, on tente d'y trouver un fichier index.html
+    // s'il s'agit d'un rÃ©pertoire, on tente d'y trouver un fichier index.html
     if (fs.statSync(pathname).isDirectory()) {
       pathname += '/index.html';
     }
@@ -192,15 +193,33 @@ http.createServer(function (req, res) {
       } else {
         // extraction du suffixe de fichier : .js, .doc, ...
         const ext = path.parse(pathname).ext;
-        // si le fichier est trouvé, définit le content-type et envoie les données
+        // si le fichier est trouvÃ©, dÃ©finit le content-type et envoie les donnÃ©es
         res.setHeader('Content-type', mimeType[ext] || 'text/plain' );
         res.end(data);
       }
     });
   });
 
-
   
+// FORMULAIRES
+if (req.url === '/log' && req.method === 'POST') {
+		var rawData = '';
+		
+		req.on('data', data=> rawData += data).on('end', ()=> {
+			var info = qs.parse(rawData);
+			res.writeHead(200, {'Content-Type' : 'text/plain'});
+			res.end(`Firstname: ${info.firstname} Lastname: ${info.lastname}`);
+		});
+	}
+else if (req.url === '/end' && req.method === 'POST') {
+		var rawData = '';
+		
+		req.on('data', data=> rawData += data).on('end', ()=> {
+			var info = qs.parse(rawData);
+			res.writeHead(200, {'Content-Type' : 'text/plain'});
+			res.end(`Firstname end : ${info.first} Lastname end : ${info.last}`);
+		});
+	}
   
 }).listen(8080);
 
