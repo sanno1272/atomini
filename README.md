@@ -14,8 +14,8 @@
 VERSION : 0.1.0
 ----------
 
-principles of this small framework is based on atomic design concept by Brad Frost.
-the architecture is a SPA (single page application) principle wich injected in a single dom element, called **organism**.
+Principles of this small framework is based on atomic design concept by Brad Frost.
+the architecture is a SPA (single page application) principle which injected in a single dom element, called **organism**.
 
 - parent container is **organism**
 - orgnanism is designed with **molecules**
