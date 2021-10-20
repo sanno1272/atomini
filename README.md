@@ -14,23 +14,23 @@
 VERSION : 0.1.0
 ----------
 
-principles of the framework is based on atomic design concept.
-the architecture is a SPA (single page application) principle.
+principles of this small framework is based on atomic design concept by Brad Frost.
+the architecture is a SPA (single page application) principle wich injected in a single dom element, called **organism**.
 
-- parent container is organism
-- orgnanism is designed with molecules
-- the molecules contains atoms
-- the interaction is made with electrons
-- the css is a owner pre-processor like.
+- parent container is **organism**
+- orgnanism is designed with **molecules**
+- the molecules contains **atoms**
+- the interaction is made with **electrons**
+- the css is a owner pre-processor **like**.
 
-repo structure is angular like.
+repo structure is angular 2+ like.
 
 for comprehension :
-- organism => container in which is injected the apps
-- molecules => structure of the apps contains atoms
-- atoms => html vue
-- electrons => javascript functions
-- acss => css pre-processor like 
+- **organism** => container in which is injected the apps
+- **molecules** => structure of the apps contains atoms
+- **atoms** => html vue
+- **electrons** => javascript functions
+- **acss** => css pre-processor like 
 
 ----------
 
