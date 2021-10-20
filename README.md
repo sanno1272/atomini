@@ -1,6 +1,12 @@
 # atom
 
-- Launch => node serveur_img.js
+
+
+**CONTEXT**
+- system => windows
+- - node V10.19.0
+
+- Launch on cmd => node serveur_img.js
 - browser => localhost:8080
 
 
