@@ -120,7 +120,7 @@ const mapp = configMap.mapper;
 
 
 	// appel des fonctions @toms
-	const reqFunk = require('./testXp.js');
+	const reqFunk = require('./functionTemplate.js');
 		
 	// creation index.html	
 	async function createIndex (fileName) {
@@ -157,7 +157,7 @@ http.createServer(function (req, res) {
   // Extrait le chemin de l'URL
   let pathname = `.${parsedUrl.pathname}`;
 
-  // Associe le type MIME par rapport au suffixe du fichier demandé
+  // Associe le type MIME par rapport au suffixe du fichier demandÃ©
   const mimeType = {
     '.ico': 'image/x-icon',
     '.html': 'text/html',
@@ -181,7 +181,7 @@ http.createServer(function (req, res) {
       res.end(`File ${pathname} not found!`);
       return;
     }
-    // s'il s'agit d'un répertoire, on tente d'y trouver un fichier index.html
+    // s'il s'agit d'un rÃ©pertoire, on tente d'y trouver un fichier index.html
     if (fs.statSync(pathname).isDirectory()) {
       pathname += '/index.html';
     }
@@ -193,7 +193,7 @@ http.createServer(function (req, res) {
       } else {
         // extraction du suffixe de fichier : .js, .doc, ...
         const ext = path.parse(pathname).ext;
-        // si le fichier est trouvé, définit le content-type et envoie les données
+        // si le fichier est trouvÃ©, dÃ©finit le content-type et envoie les donnÃ©es
         res.setHeader('Content-type', mimeType[ext] || 'text/plain' );
         res.end(data);
       }
