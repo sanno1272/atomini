@@ -3,10 +3,10 @@
 
 
 **CONTEXT**
-- system => windows
+- OS => windows
 - node V10.19.0
 
-- Launch on cmd => node serveur_img.js
+- Launch on cmd => node serveur.js
 - browser => localhost:8080
 
 
